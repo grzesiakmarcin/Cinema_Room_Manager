@@ -7,7 +7,9 @@ public class Cinema {
     public static void main(String[] args) {
 
         Bebechy playMe = new Bebechy();
-        playMe.calculateIncome();
+        playMe.printCinema();
+
+
 
 
     }
@@ -37,56 +39,38 @@ class Bebechy {
         }
 
 
-        System.out.println("Total income:\n$"+income);
+        System.out.println("Total income:\n$" + income);
     }
 
 
-    public void printCinema(String[][] array) {
+
+
+
+
+    public void printCinema(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of rows:");
+        int delcaredRows=sc.nextInt();
+        System.out.println("Enter the number of seats in each row:");
+        int delcaredSeats=sc.nextInt();
+
         System.out.println("Cinema:");
+        System.out.print(" ");
 
 
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                System.out.print(array[i][j] + " ");
+        for (int i = 1; i <=delcaredSeats; i++) {
+            System.out.print(" " + i);
+        }
+        System.out.println();
+
+        for (int i = 1; i <= delcaredRows; i++) {
+            System.out.print(i);
+            for (int j = 1; j <= delcaredSeats; j++) {
+                System.out.print(" S");
             }
             System.out.println();
         }
     }
 
-    public void printCinema() {
-        System.out.println("Cinema:");
-        // Developing Rows
-        for (int row = 0; row <= 8; row++) {
-            if (row == 0) {
-                System.out.print("  ");
-            } else if (row == 8) {
-                System.out.print(row + "\n");
-            } else {
-                System.out.print(row + " ");
-            }
-        }
-        // Developing Columns
-        for (int row = 1; row <= 7; row++) {
-            for (int col = 0; col <= 8; col++) {
-                if (col == 0) {
-                    System.out.print(row + " ");
-                } else if (col == 8) {
-                    System.out.print("S\n");
-                } else {
-                    System.out.print("S ");
-                }
-            }
-        }
-    }
 
-
-    //    String[][] cinema = {
-//            {" ", "1", "2", "3", "4", "5", "6", "7", "8"},
-//            {"1", "S", "S", "S", "S", "S", "S", "S", "S"},
-//            {"2", "S", "S", "S", "S", "S", "S", "S", "S"},
-//            {"3", "S", "S", "S", "S", "S", "S", "S", "S"},
-//            {"4", "S", "S", "S", "S", "S", "S", "S", "S"},
-//            {"5", "S", "S", "S", "S", "S", "S", "S", "S"},
-//            {"6", "S", "S", "S", "S", "S", "S", "S", "S"},
-//            {"7", "S", "S", "S", "S", "S", "S", "S", "S"}};
 }
