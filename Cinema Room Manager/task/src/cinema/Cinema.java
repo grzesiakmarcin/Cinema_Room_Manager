@@ -35,14 +35,26 @@ public class Cinema {
 
         }
 
-        playMe.printCinema(cinemaRoom);
-        playMe.bookAndShowCinemaSeatPrise(cinemaRoom);
+
+        do {
+            System.out.println("\n1. Show the seats\n2. Buy a ticket\n0. Exit");
+            int menuAnswer = sc.nextInt();
+
+            switch (menuAnswer) {
+
+                case 1:
+                    playMe.printCinema(cinemaRoom);
+                    break;
+                case 2:
+                    playMe.bookAndShowCinemaSeatPrise(cinemaRoom);
+                   break;
+                case 0:
+                    return;
 
 
 
-
-
-
+            }
+        } while(true);
 
 
     }
@@ -50,12 +62,16 @@ public class Cinema {
 
 class Bebechy {
 
-    public int calculateSeats(String[][] array){
-        return (array.length-1)*(array[0].length-1);
+    public void appExit(){
+        System.exit(1);
+    }
+
+    public int calculateSeats(String[][] array) {
+        return (array.length - 1) * (array[0].length - 1);
     }
 
 
-    public String[][] bookTheSeat(String[][] cinemaRoom, int rowWanted,int seatWanted) {
+    public String[][] bookTheSeat(String[][] cinemaRoom, int rowWanted, int seatWanted) {
         int delcaredRows = cinemaRoom.length;
         int delcaredSeats = cinemaRoom[0].length;
 
@@ -71,21 +87,18 @@ class Bebechy {
         int rowWanted = sc.nextInt();
         System.out.println("Enter a seat number in that row:");
         int seatWanted = sc.nextInt();
-        int delcaredRows = cinemaRoom.length-1;
-        int delcaredSeats = cinemaRoom[0].length-1;
+        int delcaredRows = cinemaRoom.length - 1;
+        int delcaredSeats = cinemaRoom[0].length - 1;
         int price;
 
-        int half=delcaredRows/2;
-
-
+        int half = delcaredRows / 2;
 
 
         int numberOfSeats = calculateSeats(cinemaRoom);
 
-        if(numberOfSeats<=60){
-            price=10;
-        }
-        else {
+        if (numberOfSeats <= 60) {
+            price = 10;
+        } else {
 
             if (rowWanted > half) {
                 price = 8;
@@ -95,9 +108,8 @@ class Bebechy {
 
         }
         System.out.println("Ticket Price: $" + price);
-        bookTheSeat(cinemaRoom,rowWanted,seatWanted);
+        bookTheSeat(cinemaRoom, rowWanted, seatWanted);
         printCinema(cinemaRoom);
-
 
 
         return cinemaRoom;
