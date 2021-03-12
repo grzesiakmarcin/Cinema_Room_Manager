@@ -37,7 +37,7 @@ public class Cinema {
 
 
         do {
-            System.out.println("\n1. Show the seats\n2. Buy a ticket\n0. Exit");
+            System.out.println("\n1. Show the seats\n2. Buy a ticket\n3. Statistics\n0. Exit");
             int menuAnswer = sc.nextInt();
 
             switch (menuAnswer) {
@@ -48,6 +48,8 @@ public class Cinema {
                 case 2:
                     playMe.bookAndShowCinemaSeatPrise(cinemaRoom);
                    break;
+                   case 3:
+
                 case 0:
                     return;
 
@@ -62,9 +64,7 @@ public class Cinema {
 
 class Bebechy {
 
-    public void appExit(){
-        System.exit(1);
-    }
+
 
     public int calculateSeats(String[][] array) {
         return (array.length - 1) * (array[0].length - 1);
@@ -131,6 +131,19 @@ class Bebechy {
         }
 
     }
+
+    public void statistics (){
+        System.out.println("The number of purchased tickets;");
+        System.out.println("The number of purchased tickets represented as a percentage. Percentages should be rounded to 2 decimal places;");
+        System.out.println("Current income;");
+        System.out.println("Total income: $");
+        System.out.println("");
+    }
+
+    public int calculateTotalIncome(String[][]array){
+            }
+
+
 
 
 }
